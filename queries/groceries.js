@@ -33,9 +33,38 @@ const db = require("../db/dbConfig.js");
     }
   };
 
+  const updateGrocery= async (id, grocery) => {
+    try {
+      const updateGrocery = await db.one(
+        "UPDATE groceries SET name=$1, category=$2, description=$3, price=$4, quantity=$5, unit=$6 is_organic=$7  WHERE id=$8 RETURNING *",
+        [grocery.name, grocery.category, grocery.description, grocery.price, grocery.quantity, grocery.unit, grocery.is_organic, id]
+      );
+      return updateGrocery;
+    } catch (error) {
+      return error;
+    }
+};
+
+const deleteGrocery = async (id) => {
+    try {
+        const deleteGrocery = await db.one(
+            "DELETE FROM groceries WHERE id=$1 RETURNING *",
+            id
+        );
+        return deleteGrocery;
+
+    }catch (error){
+        return error
+    }
+};
+ 
+
+
  module.exports = {
     getAllGroceries,
      getGrocery,
      createGrocery,
+     updateGrocery,
+     deleteGrocery
      
  }
