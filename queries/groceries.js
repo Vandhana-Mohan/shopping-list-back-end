@@ -11,7 +11,7 @@ const db = require("../db/dbConfig.js");
  };
   const getGrocery = async (id) => {
     try{
-        const oneGrocery = await db.one(
+        const oneGrocery = await db.oneOrNone(
             "SELECT * FROM groceries WHERE id=$1", id
         )
         return oneGrocery;
@@ -29,7 +29,7 @@ const db = require("../db/dbConfig.js");
         return newGrocery;
 
     }catch (error) {
-        throw error
+        throw error;
     }
   };
 
