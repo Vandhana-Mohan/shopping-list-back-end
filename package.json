@@ -1,5 +1,5 @@
 {
-  "name": "shopping-cart",
+  "name": "freshpick",
   "version": "1.0.0",
   "description": "Backend for the shopping cart",
   "main": "server.js",
