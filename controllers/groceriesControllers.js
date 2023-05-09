@@ -1,6 +1,6 @@
 const express = require("express");
  const groceries = express.Router();
- const { getAllGroceries} = require("../queries/groceries.js");
+ const { getAllGroceries, getGrocery} = require("../queries/groceries.js");
 
 
  // INDEX
@@ -12,5 +12,16 @@ const express = require("express");
         res.status(500).json({ error: "server error" });
     }
 });
+
+//Show
+groceries.get("/:id", async(req, res) => {
+    const { id } = req.params;
+    const grocery = await getGrocery(id);
+    if(grocery) {
+        res.status(200).json(grocery);
+    }else {
+        res.status(404).json({error: "grocery not found"})
+    }
+})
 
 module.exports = groceries;
