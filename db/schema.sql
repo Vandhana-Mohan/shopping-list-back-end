@@ -7,7 +7,9 @@ CREATE DATABASE groceries_dev;
      id SERIAL PRIMARY KEY,
      name TEXT NOT NULL,
      category TEXT,
-     price TEXT,
-     quantity TEXT,
+     description TEXT,
+     price DECIMAL(10,2) CHECK (price >= 0),
+     quantity NUMERIC(10,2),
+     unit TEXT,
      is_organic BOOLEAN
  );
