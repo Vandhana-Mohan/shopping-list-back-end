@@ -1,6 +1,6 @@
 const express = require("express");
  const groceries = express.Router();
- const { getAllGroceries} =- require("../queries/groceries.js");
+ const { getAllGroceries} = require("../queries/groceries.js");
 
 
  // INDEX
