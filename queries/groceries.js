@@ -23,8 +23,8 @@ const db = require("../db/dbConfig.js");
     try{
 
         const newGrocery = await db.one(
-            "INSERT INTO groceries (name, category, description, price, quantity, unit, is_organic) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
-            [grocery.name, grocery.category, grocery.description, grocery.price, grocery.quantity, grocery.unit, grocery.is_organic]
+            "INSERT INTO groceries (name, category, image_url, description, price, quantity, unit, is_organic) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
+            [grocery.name, grocery.category, grocery.image_url, grocery.description, grocery.price, grocery.quantity, grocery.unit, grocery.is_organic]
         );
         return newGrocery;
 
@@ -36,8 +36,8 @@ const db = require("../db/dbConfig.js");
   const updateGrocery= async (id, grocery) => {
     try {
       const updateGrocery = await db.one(
-        "UPDATE groceries SET name=$1, category=$2, description=$3, price=$4, quantity=$5, unit=$6 is_organic=$7  WHERE id=$8 RETURNING *",
-        [grocery.name, grocery.category, grocery.description, grocery.price, grocery.quantity, grocery.unit, grocery.is_organic, id]
+        "UPDATE groceries SET name=$1, category=$2, image_url=$3 description=$4, price=$5, quantity=$6, unit=$7 is_organic=$8  WHERE id=$9 RETURNING *",
+        [grocery.name, grocery.category, grocery.image_url, grocery.description, grocery.price, grocery.quantity, grocery.unit, grocery.is_organic, id]
       );
       return updateGrocery;
     } catch (error) {
