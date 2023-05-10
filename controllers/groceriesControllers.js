@@ -1,6 +1,7 @@
 const express = require("express");
  const groceries = express.Router();
  const { getAllGroceries, getGrocery, createGrocery, updateGrocery, deleteGrocery} = require("../queries/groceries.js");
+ const validateGrocery = require("../validations/validateGrocery.js")
 
 
  // INDEX
@@ -25,7 +26,7 @@ groceries.get("/:id", async(req, res) => {
 });
 
  //CREATE
- groceries.post("/",  async (req, res) => {
+ groceries.post("/", validateGrocery, async (req, res) => {
     try {
       const grocery = await createGrocery(req.body);
       res.json(grocery);
@@ -35,7 +36,7 @@ groceries.get("/:id", async(req, res) => {
   });
 
   //update
- groceries.put("/:id", async (req, res) => {
+ groceries.put("/:id", validateGrocery, async (req, res) => {
     const { id } = req.params;
     const updateGrocery = await updateGrocery(id, req.body);
     if (updateGrocery.id) {
