@@ -13,6 +13,6 @@ CREATE DATABASE groceries_dev;
      price DECIMAL(10,2) NOT NULL CHECK (price >= 0),
      quantity NUMERIC(10,2) NOT NULL,
      unit TEXT,
-     is_organic BOOLEAN
+     is_organic BOOLEAN DEFAULT false
  );
 
