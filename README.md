@@ -4,14 +4,14 @@ Shopping Cart Backend - This backend application is designed to handle requests 
 
 ## [Click my Trello Board](https://trello.com/b/AnnhHH6R/shopping-cart-spree)
 
-## [Click my Deployed Backend URL](https://...)
+## [Click my Deployed Backend URL](https://shopping-list-back-end-s39o.onrender.com)
 
-## [Click my Deployed Frontend URL](https://...)
+## [Click my Deployed Frontend URL](https://tvshoppingapp.netlify.app)
 
 ---
 ### Team Members
 
-Our team consisted of three members, each with a specific role:
+Our team consisted of two members, each with a specific role:
 
 - Touhami Ben
 - Vandhana Mohan
