@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS groceries_dev;
+
 CREATE DATABASE groceries_dev;
 
  \c groceries_dev;

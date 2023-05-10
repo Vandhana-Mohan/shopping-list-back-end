@@ -1,6 +1,6 @@
 // @param {Joi Schema} schema
 // @return {middleware}
- 
+
 const createValidator = (schema) => (req, res, next) => {
   const { error } = schema.validate(req.body);
   if (error) {

@@ -40,7 +40,7 @@ const createGrocery = async (grocery) => {
 const updateGrocery = async (id, grocery) => {
   try {
     const updateGrocery = await db.one(
-      "UPDATE groceries SET name=$1, category=$2, image_url=$3 description=$4, price=$5, quantity=$6, unit=$7 is_organic=$8  WHERE id=$9 RETURNING *",
+      "UPDATE groceries SET name=$1, category=$2, image_url=$3 description=$4, price=$5, quantity=$6, unit=$7, is_organic=$8  WHERE id=$9 RETURNING *",
       [
         grocery.name,
         grocery.category,
