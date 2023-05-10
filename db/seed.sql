@@ -7,3 +7,16 @@
   ('Bread Loaf', 'Bakery', 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ-Tq7ywHXRBUVW9lOBYw0XuYTj_WsOzlpTnc6ZKzQ5vTQAE7xA1Uk38B-DCWw3HQEVU1t9RK3j', '21 Whole Grains', 5.99, 1, 'oz', true),
   ('Beef Steak', 'Meat', 'https://assets.kansascitysteaks.com/dyn-images/pdp_hero/TBone_Prime_Raw_SU07-b3250c1962c455e6e20b6debcf6d6678.jpg', 'USDA Prime T_bone Steak', 7.99, 1, 'pound', false),
   ('Pepsi', 'Beverages', 'https://m.media-amazon.com/images/I/41b4770tmqL._PIbundle-24,TopRight,0,0_SX273SY500SH20_.jpg', 'Zero-Sugar', 27, 24, 'oz', false);
+
+
+INSERT INTO reviews (groceries_id, reviewer, title, content, rating )
+VALUES
+ (1, 'Evan', 'My Favorite', 'This website crushes it when it comes to awesome explanations', 3),
+(2, 'Evan', 'My Favorite', 'This website crushes it when it comes to inspiring me', 3),
+(3, 'Evan', 'My Least Favorite', 'This website crushes it when it comes to destroying my patience', 5),
+(5, 'Juliana', 'I Love Going Here', 'I finally got some good organic Vegetables', 5),
+(6, 'David', 'Cool Site', 'But I got way into adding decorative pillows everywhere', 1),
+(2, 'Mr. Mingo', 'So Helpful', 'I got some awesome recommendations for good products', 3),
+(4, 'Alison', 'A lifesaver!','Helped me get what i need', 4),
+(4, 'Hannah', 'Insert Confetti Emoji Here', 'I survived 6 hours at the DMV!', 4),
+(3, 'Gabi', 'My Friend Hannah', 'Gets a discount if I leave a positive review, so here it is', 5);

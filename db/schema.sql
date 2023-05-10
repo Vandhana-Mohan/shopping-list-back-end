@@ -16,4 +16,15 @@ CREATE DATABASE groceries_dev;
      is_organic BOOLEAN DEFAULT false
  );
 
+ CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+ reviewer TEXT NOT NULL,
+ title TEXT NOT NULL,
+ content TEXT NOT NULL,
+ rating NUMERIC,
+ CHECK (rating >= 0 AND rating <= 5),
+ groceries_id INTEGER NOT NULL REFERENCES groceries (id)
+ ON DELETE CASCADE
+ )
+
 
