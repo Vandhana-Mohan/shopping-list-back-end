@@ -8,6 +8,7 @@ const express = require("express");
  groceries.get("/", async (req, res) => {
     const allGroceries = await getAllGroceries();
     if(!allGroceries.error){
+        
         res.status(200).json(allGroceries);
     }else{
         res.status(500).json({ error: "server error" });
