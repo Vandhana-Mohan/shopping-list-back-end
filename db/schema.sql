@@ -14,3 +14,4 @@ CREATE DATABASE groceries_dev;
      unit TEXT,
      is_organic BOOLEAN
  );
+
