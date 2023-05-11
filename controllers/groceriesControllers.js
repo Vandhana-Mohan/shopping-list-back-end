@@ -35,11 +35,12 @@ groceries.get("/:id", async (req, res) => {
 
 //CREATE
 groceries.post("/", validateGrocery, async (req, res) => {
-  try {
-    const grocery = await createGrocery(req.body);
-    res.json(grocery);
-  } catch (error) {
-    res.status(400).json({ error: error });
+  const { error, result } = await createGrocery(req.body);
+  if (error) {
+    res.status(500).json({ error: "server error" });
+  } else {
+    res.status(201).json(result);
+    console.log(result);
   }
 });
 
