@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const groceriesControllers = require("./controllers/groceriesControllers.js");
+const reviewsController = require("./controllers/reviewsController")
 //CONFIG
 const app = express();
 
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to shopping cart");
 });
 app.use("/groceries", groceriesControllers);
+app.use("/reviews", reviewsController)
 app.get("*", (req, res) => {
   res.status(404).send("Page not found");
 });
