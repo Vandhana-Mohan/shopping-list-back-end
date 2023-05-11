@@ -33,7 +33,9 @@ groceries.get("/:id", async (req, res) => {
   } else if (error) {
     res.status(500).json({ error: "server error" });
   } else {
+    console.log("hi")
     res.status(200).json(result);
+    console.log("hio")
   }
 });
 
