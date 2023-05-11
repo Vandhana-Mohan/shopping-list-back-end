@@ -46,11 +46,12 @@ groceries.post("/", validateGrocery, async (req, res) => {
 //update
 groceries.put("/:id", validateGrocery, async (req, res) => {
   const { id } = req.params;
-  const updateGrocery = await updateGrocery(id, req.body);
-  if (updateGrocery.id) {
-    res.status(200).json(updateGrocery);
+
+  const { error, result } = await updateGrocery(id, req.body);
+  if (error) {
+    res.status(500).json({ error: "Server error - Could not update grocery" });
   } else {
-    res.status(400).json({ error: "Could not update grocery" });
+    res.status(200).json(result);
   }
 });
 
