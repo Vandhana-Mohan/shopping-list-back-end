@@ -57,11 +57,12 @@ groceries.put("/:id", validateGrocery, async (req, res) => {
 // DELETE
 groceries.delete("/:id", async (req, res) => {
   const { id } = req.params;
-  const deleteGrocery = await deleteGrocery(id);
-  if (deleteGrocery.id) {
-    res.status(200).json(deleteGrocery);
+  const { error, result } = await deleteGrocery(id);
+
+  if (error) {
+    res.status(404).json("Item not found");
   } else {
-    res.status(404).json({ error: "grocery not found" });
+    res.status(201).json(result);
   }
 });
 
