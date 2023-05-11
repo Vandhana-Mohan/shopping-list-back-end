@@ -11,6 +11,7 @@ const {
 } = require("../queries/groceries.js");
 
 const validateGrocery = require("../validations/validateGrocery.js");
+const validateURL = require("../validations/validateUrl.js");
 
 // INDEX
 groceries.get("/", async (req, res) => {
@@ -38,7 +39,7 @@ groceries.get("/:id", async (req, res) => {
 });
 
 //CREATE
-groceries.post("/", validateGrocery, async (req, res) => {
+groceries.post("/", validateGrocery, validateURL, async (req, res) => {
   const { error, result } = await createGrocery(req.body);
   if (error) {
     res.status(500).json({ error: "server error" });
@@ -49,7 +50,7 @@ groceries.post("/", validateGrocery, async (req, res) => {
 });
 
 //update
-groceries.put("/:id", validateGrocery, async (req, res) => {
+groceries.put("/:id", validateGrocery, validateURL, async (req, res) => {
   const { id } = req.params;
 
   const { error, result } = await updateGrocery(id, req.body);
