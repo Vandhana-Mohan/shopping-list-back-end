@@ -15,9 +15,9 @@ const getGrocery = async (id) => {
       "SELECT * FROM groceries WHERE id=$1",
       id
     );
-    return oneGrocery;
+    return { result: oneGrocery };
   } catch (error) {
-    throw error;
+    throw { error };
   }
 };
 
