@@ -18,7 +18,6 @@ CREATE DATABASE groceries_dev;
 
  CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
-
     reviewer TEXT NOT NULL,
     title TEXT NOT NULL,
     content TEXT NOT NULL,
