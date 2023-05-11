@@ -18,6 +18,7 @@ CREATE DATABASE groceries_dev;
 
  CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
+
     reviewer TEXT NOT NULL,
     title TEXT NOT NULL,
     content TEXT NOT NULL,
@@ -26,5 +27,6 @@ CREATE DATABASE groceries_dev;
     groceries_id INTEGER NOT NULL REFERENCES groceries (id)
     ON DELETE CASCADE
  )
+
 
 
