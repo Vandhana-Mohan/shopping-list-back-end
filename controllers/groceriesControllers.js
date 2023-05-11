@@ -26,16 +26,14 @@ groceries.get("/", async (req, res) => {
 //Show
 groceries.get("/:id", async (req, res) => {
   const { id } = req.params;
+  const result = await getGrocery(id);
 
-  const { error, result } = await getGrocery(id);
-  if (error?.code === 0) {
+  if (result === null) {
     res.status(404).json({ error: "Item not found" });
-  } else if (error) {
+  } else if (result instanceof Error) {
     res.status(500).json({ error: "server error" });
   } else {
-    console.log("hi")
     res.status(200).json(result);
-    console.log("hio")
   }
 });
 

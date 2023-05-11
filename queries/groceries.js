@@ -8,14 +8,19 @@ const getAllGroceries = async () => {
     throw error;
   }
 };
+
 const getGrocery = async (id) => {
   try {
-    const oneGrocery = await db.oneOrNone("SELECT * FROM groceries WHERE id=$1", id);
+    const oneGrocery = await db.oneOrNone(
+      "SELECT * FROM groceries WHERE id=$1",
+      id
+    );
     return oneGrocery;
   } catch (error) {
-    return { error: error };
+    throw error;
   }
 };
+
 const createGrocery = async (grocery) => {
   try {
     const newGrocery = await db.one(
