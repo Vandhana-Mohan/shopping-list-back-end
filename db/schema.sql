@@ -11,7 +11,7 @@ CREATE DATABASE groceries_dev;
      image_url TEXT,
      description TEXT,
      price DECIMAL(10,2) NOT NULL CHECK (price >= 0),
-     quantity NUMERIC(10,2) NOT NULL CHECK (quantity >= 0),
+     quantity DECIMAL(10,2) NOT NULL CHECK (quantity >= 0),
      unit TEXT,
      is_organic BOOLEAN DEFAULT false
  );
