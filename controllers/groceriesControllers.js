@@ -15,7 +15,8 @@ const validateGrocery = require("../validations/validateGrocery.js");
 // INDEX
 groceries.get("/", async (req, res) => {
   const allGroceries = await getAllGroceries();
-  if (!allGroceries.error) {
+
+  if (allGroceries[0]) {
     res.status(200).json(allGroceries);
   } else {
     res.status(500).json({ error: "server error" });
