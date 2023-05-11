@@ -38,18 +38,18 @@ groceries.get("/:id", async (req, res) => {
 });
 
 //CREATE
-groceries.post("/", validateGrocery, validateURL, async (req, res) => {
+groceries.post("/", validateGrocery, async (req, res) => {
   const { error, result } = await createGrocery(req.body);
   if (error) {
     res.status(500).json({ error: "server error" });
   } else {
-    res.status(201).json(result);
     console.log(result);
+    res.status(201).json(result);
   }
 });
 
 //update
-groceries.put("/:id", validateGrocery, validateURL, async (req, res) => {
+groceries.put("/:id", validateGrocery, async (req, res) => {
   const { id } = req.params;
 
   const { error, result } = await updateGrocery(id, req.body);
