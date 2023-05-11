@@ -12,6 +12,4 @@ const grocerySchema = Joi.object({
   is_organic: Joi.boolean().optional(),
 });
 
-
-
 module.exports = createValidator(grocerySchema);

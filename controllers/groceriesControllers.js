@@ -11,6 +11,7 @@ const {
 } = require("../queries/groceries.js");
 
 const validateGrocery = require("../validations/validateGrocery.js");
+// const validateURL = require("../validations/validateUrl.js");
 
 // INDEX
 groceries.get("/", async (req, res) => {
@@ -42,7 +43,6 @@ groceries.post("/", validateGrocery, async (req, res) => {
   if (error) {
     res.status(500).json({ error: "server error" });
   } else {
-    console.log(result);
     res.status(201).json(result);
   }
 });
