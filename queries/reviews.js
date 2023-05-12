@@ -2,7 +2,7 @@ const db = require("../db/dbConfig.js");
 
 const getAllReviewsByGrocery = async (groceryId) => {
   try {
-    const result = await db.any("SELECT * FROM reviews WHERE grocery_id=$1", [
+    const result = await db.any("SELECT * FROM reviews WHERE groceries_id=$1", [
       groceryId,
     ]);
     return { result };

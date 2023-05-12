@@ -11,9 +11,11 @@ const {
 
 // index
 reviews.get("/", async (req, res) => {
+ 
   const { groceryId } = req.params;
   const { error, result } = await getAllReviewsByGrocery(groceryId);
   if (error) {
+    console.log(error)
     res.status(500).json({ error: "server error" });
   } else {
     res.status(200).json(result);
@@ -36,6 +38,8 @@ reviews.get("/:reviewId", async (req, res) => {
 
 // create
 reviews.post("/", validateReview, async (req, res) => {
+
+    
   const { error, result } = await createReview(req.body);
   if (error) {
     res.status(500).json({ error: "server error" });
@@ -54,6 +58,7 @@ reviews.put("/:reviewId", validateReview, async (req, res) => {
     res.status(200).json(result);
   }
 });
+//DELETE
 
 reviews.delete("/:reviewId", async (req, res) => {
   const { reviewId } = req.params;
