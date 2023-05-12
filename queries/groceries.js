@@ -39,7 +39,7 @@ const createGrocery = async (grocery) => {
 
     return { result: newGrocery };
   } catch (error) {
-    throw error;
+    throw { error };
   }
 };
 
@@ -61,7 +61,7 @@ const updateGrocery = async (id, grocery) => {
     );
     return { result: updateGrocery };
   } catch (error) {
-    return error;
+    throw { error };
   }
 };
 
@@ -73,7 +73,7 @@ const deleteGrocery = async (id) => {
     );
     return deleteGrocery;
   } catch (error) {
-    return error;
+    throw { error };
   }
 };
 

@@ -13,7 +13,7 @@ const {
 const validateGrocery = require("../validations/validateGrocery.js");
 // const validateURL = require("../validations/validateUrl.js");
 
-// INDEX
+// INDEX - show all
 groceries.get("/", async (req, res) => {
   const allGroceries = await getAllGroceries();
 
@@ -24,7 +24,7 @@ groceries.get("/", async (req, res) => {
   }
 });
 
-//Show
+//Show one item by id
 groceries.get("/:id", async (req, res) => {
   const { id } = req.params;
   const { error, result } = await getGrocery(id);
@@ -48,11 +48,12 @@ groceries.post("/", validateGrocery, async (req, res) => {
 });
 
 //update
-groceries.put("/:id", async (req, res) => {
+groceries.put("/:id", validateGrocery, async (req, res) => {
   const { id } = req.params;
 
   const { error, result } = await updateGrocery(id, req.body);
   if (error) {
+    console.log(error);
     res.status(500).json({ error: "Server error - Could not update grocery" });
   } else {
     res.status(200).json(result);
