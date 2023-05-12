@@ -55,7 +55,7 @@ groceries.post("/", validateGrocery, async (req, res) => {
 
 //update
 
-(req, res) => {
+groceries.put("/:id", validateGrocery, async (req, res) => {
   const { id } = req.params;
 
   const { error, result } = await updateGrocery(id, req.body);
