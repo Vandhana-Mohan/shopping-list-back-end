@@ -14,7 +14,7 @@ const {
   deleteGrocery,
 } = require("../queries/groceries.js");
 
-groceries.use("/:groceryId/reviews", reviewsController);
+
 
 // INDEX
 groceries.get("/", async (req, res) => {
@@ -45,18 +45,17 @@ groceries.get("/:id", async (req, res) => {
 //CREATE
 groceries.post("/", validateGrocery, async (req, res) => {
 
-  
   const { error, result } = await createGrocery(req.body);
   if (error) {
     res.status(500).json({ error: "server error" });
   } else {
     res.status(201).json(result);
-    console.log(result);
   }
 });
 
 //update
-groceries.put("/:id", validateGrocery, async (req, res) => {
+
+(req, res) => {
   const { id } = req.params;
 
   const { error, result } = await updateGrocery(id, req.body);
