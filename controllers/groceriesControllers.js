@@ -1,6 +1,10 @@
 const express = require("express");
 
 const groceries = express.Router();
+const validateGrocery = require("../validations/validateGrocery.js");
+const reviewsController = require("./reviewsController.js")
+// const validateURL = require("../validations/validateUrl.js");
+
 
 const {
   getAllGroceries,
@@ -10,11 +14,12 @@ const {
   deleteGrocery,
 } = require("../queries/groceries.js");
 
-const validateGrocery = require("../validations/validateGrocery.js");
-// const validateURL = require("../validations/validateUrl.js");
+
 
 // INDEX - show all
 groceries.get("/", async (req, res) => {
+
+  
   const allGroceries = await getAllGroceries();
 
   if (allGroceries[0]) {
@@ -39,6 +44,7 @@ groceries.get("/:id", async (req, res) => {
 
 //CREATE
 groceries.post("/", validateGrocery, async (req, res) => {
+
   const { error, result } = await createGrocery(req.body);
   if (error) {
     res.status(500).json({ error: "server error" });
@@ -48,7 +54,7 @@ groceries.post("/", validateGrocery, async (req, res) => {
 });
 
 //update
-groceries.put("/:id", validateGrocery, async (req, res) => {
+groceries.put("/:id", async (req, res) => {
   const { id } = req.params;
 
   const { error, result } = await updateGrocery(id, req.body);
