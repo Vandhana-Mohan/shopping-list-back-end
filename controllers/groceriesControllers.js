@@ -5,7 +5,6 @@ const validateGrocery = require("../validations/validateGrocery.js");
 const reviewsController = require("./reviewsController.js")
 // const validateURL = require("../validations/validateUrl.js");
 
-
 const {
   getAllGroceries,
   getGrocery,
@@ -14,18 +13,13 @@ const {
   deleteGrocery,
 } = require("../queries/groceries.js");
 
-
-
 // INDEX - show all
 groceries.get("/", async (req, res) => {
-
-  
   const allGroceries = await getAllGroceries();
-
   if (allGroceries[0]) {
     res.status(200).json(allGroceries);
   } else {
-    res.status(500).json({ error: "server error" });
+    res.status(500).json({ error: "Server Error" });
   }
 });
 
@@ -44,23 +38,22 @@ groceries.get("/:id", async (req, res) => {
 
 //CREATE
 groceries.post("/", validateGrocery, async (req, res) => {
-
   const { error, result } = await createGrocery(req.body);
   if (error) {
-    res.status(500).json({ error: "server error" });
+    res.status(500).json({ error: "Server Error" });
   } else {
     res.status(201).json(result);
   }
 });
 
 //update
-groceries.put("/:id", async (req, res) => {
+groceries.put("/:id", validateGrocery, async (req, res) => {
   const { id } = req.params;
 
   const { error, result } = await updateGrocery(id, req.body);
   if (error) {
     console.log(error);
-    res.status(500).json({ error: "Server error - Could not update grocery" });
+    res.status(500).json({ error: "Server error - Could not update item" });
   } else {
     res.status(200).json(result);
   }
