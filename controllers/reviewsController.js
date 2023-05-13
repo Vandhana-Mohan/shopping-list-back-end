@@ -66,7 +66,7 @@ reviews.delete("/:reviewId", async (req, res) => {
   if (error) {
     res.status(404).json("Review not found");
   } else {
-    res.status(201).json(result);
+    res.status(200).json(result);
   }
 });
 
