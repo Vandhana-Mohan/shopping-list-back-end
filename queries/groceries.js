@@ -2,7 +2,7 @@ const db = require("../db/dbConfig");
 
 const getAllGroceries = async () => {
   try {
-    const allGroceries = await db.any("SELECT * FROM groceries");
+    const allGroceries = await db.any("SELECT * FROM groceries ORDER BY id");
     return allGroceries;
   } catch (error) {
     throw error;
