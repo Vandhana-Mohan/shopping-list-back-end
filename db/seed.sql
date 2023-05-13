@@ -16,8 +16,8 @@ VALUES
 (2, 'Evan', 'My Favorite', 'This website crushes it when it comes to inspiring me', 3),
 (3, 'Evan', 'My Least Favorite', 'This website crushes it when it comes to destroying my patience', 5),
 (5, 'Juliana', 'I Love Going Here', 'I finally got some good organic Vegetables', 5),
-(6, 'David', 'Cool Site', 'But I got way into adding decorative pillows everywhere', 1),
+(6, 'David', 'Cool Site', 'But I got way into adding organic product everywhere', 1),
 (2, 'Mr. Mingo', 'So Helpful', 'I got some awesome recommendations for good products', 3),
 (4, 'Alison', 'A lifesaver!','Helped me get what i need', 4),
-(4, 'Hannah', 'Insert Confetti Emoji Here', 'I survived 6 hours at the DMV!', 4),
+(4, 'Hannah', 'Insert Confetti Emoji Here', 'css looks good!', 4),
 (3, 'Gabi', 'My Friend Hannah', 'Gets a discount if I leave a positive review, so here it is', 5);

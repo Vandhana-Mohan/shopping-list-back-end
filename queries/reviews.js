@@ -5,7 +5,9 @@ const getAllReviewsByGrocery = async (groceryId) => {
     const result = await db.any("SELECT * FROM reviews WHERE groceries_id=$1", [
       groceryId,
     ]);
+    console.log(result)
     return { result };
+    
   } catch (error) {
     return { error };
   }
@@ -24,12 +26,12 @@ const createReview = async (review) => {
   try {
     const result = await db.one(
       `INSERT INTO
-        reviews(grocery_id, reviewer, title, content, rating)
+        reviews(groceries_id, reviewer, title, content, rating)
        VALUES
         ($1, $2, $3, $4, $5)
        RETURNING *;`,
       [
-        review.grocery_id,
+        review.groceries_id,
         review.reviewer,
         review.title,
         review.content,
@@ -59,9 +61,9 @@ const updateReview = async (id, review) => {
   
   try {
     const result = await db.one(
-      `UPDATE reviews SET grocery_id=$1, reviewer=$2, title=$3, content=$4, rating=$5 WHERE id=$6 RETURNING *`,
+      `UPDATE reviews SET groceries_id=$1, reviewer=$2, title=$3, content=$4, rating=$5 WHERE id=$6 RETURNING *`,
       [
-        review.grocery_id,
+        review.groceries_id,
         review.reviewer,
         review.title,
         review.content,
