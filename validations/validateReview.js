@@ -2,7 +2,7 @@ const Joi = require("joi");
 const createValidator = require("./createValidator");
 
 const reviewSchema = Joi.object({
-  id: Joi.number(),
+  id: Joi.number().required(),
   groceries_id: Joi.number().required(),
   reviewer: Joi.string().required(),
   title: Joi.string().required(),
