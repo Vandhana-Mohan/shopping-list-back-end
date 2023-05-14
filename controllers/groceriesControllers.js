@@ -13,7 +13,13 @@ const {
   deleteGrocery,
 } = require("../queries/groceries.js");
 
+groceries.use("/:groceryId/reviews", reviewsController)
+
+
+
+
 // INDEX - show all
+
 groceries.get("/", async (req, res) => {
   const allGroceries = await getAllGroceries();
   if (allGroceries[0]) {
@@ -47,6 +53,7 @@ groceries.post("/", validateGrocery, async (req, res) => {
 });
 
 //update
+
 groceries.put("/:id", validateGrocery, async (req, res) => {
   const { id } = req.params;
 
@@ -58,7 +65,6 @@ groceries.put("/:id", validateGrocery, async (req, res) => {
     res.status(200).json(result);
   }
 });
-
 // DELETE
 groceries.delete("/:id", async (req, res) => {
   const { id } = req.params;
