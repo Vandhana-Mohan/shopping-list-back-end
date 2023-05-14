@@ -2,7 +2,7 @@ const db = require("../db/dbConfig");
 
 const getAllGroceries = async () => {
   try {
-    const allGroceries = await db.any("SELECT * FROM groceries");
+    const allGroceries = await db.any("SELECT * FROM groceries ORDER BY id");
     return allGroceries;
   } catch (error) {
     throw error;
@@ -39,7 +39,7 @@ const createGrocery = async (grocery) => {
 
     return { result: newGrocery };
   } catch (error) {
-    throw error;
+    throw { error };
   }
 };
 
@@ -61,7 +61,7 @@ const updateGrocery = async (id, grocery) => {
     );
     return { result: updateGrocery };
   } catch (error) {
-    return error;
+    throw { error };
   }
 };
 
@@ -73,7 +73,7 @@ const deleteGrocery = async (id) => {
     );
     return deleteGrocery;
   } catch (error) {
-    return error;
+    throw { error };
   }
 };
 

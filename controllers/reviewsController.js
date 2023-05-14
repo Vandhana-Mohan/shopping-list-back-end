@@ -22,7 +22,7 @@ reviews.get("/", async (req, res) => {
   }
 });
 
-// show
+// show 
 reviews.get("/:reviewId", async (req, res) => {
   console.log(req.params);
   const { reviewId } = req.params;

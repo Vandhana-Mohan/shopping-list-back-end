@@ -5,7 +5,6 @@ const validateGrocery = require("../validations/validateGrocery.js");
 const reviewsController = require("./reviewsController.js")
 // const validateURL = require("../validations/validateUrl.js");
 
-
 const {
   getAllGroceries,
   getGrocery,
@@ -18,20 +17,19 @@ groceries.use("/:groceryId/reviews", reviewsController)
 
 
 
-// INDEX
+
+// INDEX - show all
+
 groceries.get("/", async (req, res) => {
-
-  
   const allGroceries = await getAllGroceries();
-
   if (allGroceries[0]) {
     res.status(200).json(allGroceries);
   } else {
-    res.status(500).json({ error: "server error" });
+    res.status(500).json({ error: "Server Error" });
   }
 });
 
-//Show
+//Show one item by id
 groceries.get("/:id", async (req, res) => {
   const { id } = req.params;
   const { error, result } = await getGrocery(id);
@@ -46,10 +44,9 @@ groceries.get("/:id", async (req, res) => {
 
 //CREATE
 groceries.post("/", validateGrocery, async (req, res) => {
-
   const { error, result } = await createGrocery(req.body);
   if (error) {
-    res.status(500).json({ error: "server error" });
+    res.status(500).json({ error: "Server Error" });
   } else {
     res.status(201).json(result);
   }
