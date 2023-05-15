@@ -1,14 +1,15 @@
-# shopping-cart-app-backend
+# Fresh-Picks-app-backend
 
-Shopping Cart Backend - This backend application is designed to handle requests for a shopping cart of a user.
+Fresh Picks Backend - This backend application is designed to handle requests for a shopping cart of a user.
 
 ## [Click my Trello Board](https://trello.com/b/AnnhHH6R/shopping-cart-spree)
 
 ## [Click my Deployed Backend URL](https://shopping-list-back-end-s39o.onrender.com)
 
-## [Click my Deployed Frontend URL](https://tvshoppingapp.netlify.app)
+## [Click my Deployed Frontend URL](https://fresh-picks.netlify.app/)
 
 ---
+
 ### Team Members
 
 Our team consisted of two members, each with a specific role:
