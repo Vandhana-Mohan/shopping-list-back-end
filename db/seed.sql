@@ -8,7 +8,7 @@
   ('Beef Steak', 'Meat', 'https://assets.kansascitysteaks.com/dyn-images/pdp_hero/TBone_Prime_Raw_SU07-b3250c1962c455e6e20b6debcf6d6678.jpg', 'USDA Prime T_bone Steak', 7.99, 1, 'pound', false),
   ('Pepsi', 'Beverages', 'https://m.media-amazon.com/images/I/41b4770tmqL._PIbundle-24,TopRight,0,0_SX273SY500SH20_.jpg', 'Zero-Sugar', 27, 24, 'oz', false),
   ('Coke', '', '', '', 0.99, 1, '',true),
-  ('Orange Juice', 'Beverages', 'OJ', 'https://cdn11.bigcommerce.com/s-q1qpuo8ch5/images/stencil/2048x2048/products/978/466/simplycalcium__02002.1551474762.jpg?c=2', 0.99, 1, '',true),
+  ('Orange Juice', 'Beverages', 'OJ', 'https://m.media-amazon.com/images/I/71Ro1a9iH3L.jpg', 0.99, 1, '',true),
   ('Muffins', 'Bakery', 'https://fitfoodiefinds.com/wp-content/uploads/2019/02/muffins-3.jpg', '', 0.99, 1, '',true),
   ('Lays', 'Snacks', 'https://cdn.shopify.com/s/files/1/0413/1107/6505/products/05082032-2ace6c-1650x1650_1024x.jpg?v=1597662771', '', 0.99, 1, '',false),
   ('Mangoes', '', 'https://c8.alamy.com/comp/2A0XJFT/isolated-mango-two-yellow-mango-fruit-hanging-on-a-tree-branch-isolated-on-white-background-with-clipping-path-2A0XJFT.jpg', '', 36, 12, '',false),
