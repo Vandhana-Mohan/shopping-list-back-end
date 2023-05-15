@@ -7,7 +7,15 @@
   ('Bread Loaf', 'Bakery', 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ-Tq7ywHXRBUVW9lOBYw0XuYTj_WsOzlpTnc6ZKzQ5vTQAE7xA1Uk38B-DCWw3HQEVU1t9RK3j', '21 Whole Grains', 5.99, 1, 'oz', true),
   ('Beef Steak', 'Meat', 'https://assets.kansascitysteaks.com/dyn-images/pdp_hero/TBone_Prime_Raw_SU07-b3250c1962c455e6e20b6debcf6d6678.jpg', 'USDA Prime T_bone Steak', 7.99, 1, 'pound', false),
   ('Pepsi', 'Beverages', 'https://m.media-amazon.com/images/I/41b4770tmqL._PIbundle-24,TopRight,0,0_SX273SY500SH20_.jpg', 'Zero-Sugar', 27, 24, 'oz', false),
-  ('Coke', '', '', '', 0.99, 1, '',true);
+  ('Coke', '', '', '', 0.99, 1, '',true),
+  ('Muffins', 'Bakery', 'https://fitfoodiefinds.com/wp-content/uploads/2019/02/muffins-3.jpg', '', 0.99, 1, '',true),
+  ('Lays', 'Snacks', 'https://cdn.shopify.com/s/files/1/0413/1107/6505/products/05082032-2ace6c-1650x1650_1024x.jpg?v=1597662771', '', 0.99, 1, '',false),
+  ('Mangoes', '', 'https://c8.alamy.com/comp/2A0XJFT/isolated-mango-two-yellow-mango-fruit-hanging-on-a-tree-branch-isolated-on-white-background-with-clipping-path-2A0XJFT.jpg', '', 36, 12, '',false),
+  ('Spinach', 'Vegatables','https://cdn.britannica.com/30/82530-050-79911DD4/Spinach-leaves-vitamins-source-person.jpg','',0.99,1,'',true),
+  ('Almond milk', 'Dairy','https://cdn.shopify.com/s/files/1/0415/3455/4270/products/003042.jpg?v=1605755110','',5.99,2,'Gallon',true),
+  ('Cashew milk', 'Dairy','https://silk.com/wp-content/uploads/2019/02/silk-unsweet-cashewmilk-2.png','',5.99,2,'Gallon',true);
+
+
 
 
 INSERT INTO reviews (groceries_id, reviewer, title, content, rating )

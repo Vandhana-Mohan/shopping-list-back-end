@@ -26,6 +26,3 @@ CREATE DATABASE groceries_dev;
     groceries_id INTEGER NOT NULL REFERENCES groceries (id)
     ON DELETE CASCADE
  );
-
-
-
